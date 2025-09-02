@@ -2,6 +2,8 @@
 
 ## For matrix multiplication
 
+file - [`matrix_multiplication`](./practice/kernels/matrix_mul_shared_mem.cu)
+
 ```
 CPU average time: 71454.781250 microseconds
 GPU average time: 1993.696655 microseconds
@@ -9,6 +11,8 @@ Speedup: 35.840347x
 ```
  
 ## For max element in an array, diff reductions
+
+file - [`max_element`](./practice/kernels/max_element.cu)
 
 ```
 max_element                                                                                                                         
@@ -25,4 +29,14 @@ gpu average time (first add during load): 0.000161 seconds
 speedup: 53.62x
 gpu average time (unroll last warp): 0.000158 seconds
 speedup: 54.38x
+```
+## For transpose of a matrix with naive and tiled as well
+
+file - [`transpose`](./practice/kernels/transpose_matrix.cu)
+```
+CPU Average Time: 0.000015 seconds
+GPU Naive Average Time: 0.000009 seconds
+Naive Speedup: 1.611050
+GPU Tiled Average Time: 0.000005 seconds
+Tiled Speedup: 2.886452
 ```
