@@ -35,7 +35,6 @@ void init_matrix(float *matrix, int size) {
     }
 }
 
-
 double get_time(){
     struct timespec ts;
     clock_gettime(CLOCK_MONOTONIC, &ts);

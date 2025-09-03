@@ -40,3 +40,12 @@ Naive Speedup: 1.611050
 GPU Tiled Average Time: 0.000005 seconds
 Tiled Speedup: 2.886452
 ```
+
+## For stencil calcuation in a matrix
+
+file - [`stencil_matrix`](./practice/kernels/stencil_matrix.cu)
+```
+CPU average time: 0.000043 seconds
+GPU average time: 0.000010 seconds
+Speedup: 4.475469
+```
