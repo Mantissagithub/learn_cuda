@@ -27,7 +27,7 @@ This image explains the types and what is exactly pipelined or cincurrently exec
 2. without streams -> [without_stream](./without_stream.cu)
 
 Results:
-```                                                                                                                            
+```
 Time taken without streams: 2.520098 seconds
 Total time with streams: 2.468231 seconds
 ```
@@ -71,3 +71,19 @@ Stream 3 - H2D: 1.077 ms, Kernel: 1.090 ms, D2H: 1.200 ms
 
 ![alt-text](../assets/streams_imp.png)
 ![alt-text](../assets/streams_imp1.png)
+
+### Callbacks
+
+Just a callback after this kernel or stream is ended, we print something for our verification. should use it like
+```c
+cudaAddCallback(stream, my_callback, user_data, flags) //the flags are mosty set to 0
+```
+
+---
+found some good resources on reading about setting prioirty for the streams
+- [discussion](https://forums.developer.nvidia.com/t/questions-of-cuda-stream-priority/250343)
+- [best practices for setting stream priority](https://massedcompute.com/faq-answers/?question=What+are+the+best+practices+for+setting+CUDA+stream+priority+in+a+large-scale+machine+learning+workload%3F)
+
+And also we can use numbers to set the priority, and lower the number as in more negative the number, it has the highest priority.
+
+---
