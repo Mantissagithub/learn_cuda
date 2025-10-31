@@ -1,4 +1,4 @@
-.PHONY: test 
+.PHONY: mainc 
 
 GCC = gcc
 NVCC = nvcc
@@ -8,8 +8,15 @@ CUDA_FLAGS = -arch=sm_89 -gencode arch=compute_89,code=sm_89
 # -gencode arch=compute_89,code=sm_89 means to generate code for the architecture 89
 # compute_89 means the virtual architecture and sm_89 means the real architecture
 
+# make mainc ARGS="10000 10000"
+mainc:
+	@$(NVCC) $(CUDA_FLAGS) main.cu -o mainc.out
+	@./mainc.out $(ARGS)
 
 ARGS ?= 10000 10000
+
+clean:
+	rm -f *.out
 
 
 test: 
@@ -25,11 +32,3 @@ main:
 	@./main.out
 
 
-# make mainc ARGS="10000 10000"
-mainc:
-	@$(NVCC) $(CUDA_FLAGS) main.cu -o mainc.out
-	@./mainc.out $(ARGS)
-
-
-clean:
-	rm -f test.out main.out *.out
