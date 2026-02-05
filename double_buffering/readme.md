@@ -71,4 +71,7 @@ chunk 4 → buffer 0 → stream 0
 
 **Note**: These are tested on nvidia rtx 4060, results may vary on different hardware.
 
+---
+**Good read**: https://github.com/NVIDIA/cutlass/discussions/227
 
+---
