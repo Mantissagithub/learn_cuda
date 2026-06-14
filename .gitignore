@@ -1,0 +1,9 @@
+.vscode/
+
+# Local CUDA build outputs
+*.o
+*.out
+*.exe
+*.so
+*.a
+
